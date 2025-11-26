@@ -4,7 +4,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
-import { Text } from "@/base/texts";
+import { Text } from "@/base/text";
 import { supabase } from "@/lib/supabase";
 
 interface ContactModalProps {

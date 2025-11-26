@@ -1,5 +1,5 @@
 import FullLogoWhite from "@/icons/Logo/FullLogoWhite";
-import { Text } from "@/base/texts";
+import { Text } from "@/base/text";
 
 export default function Footer() {
   return (

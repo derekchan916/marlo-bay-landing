@@ -1,4 +1,4 @@
-import { Text } from "@/base/texts";
+import { Text } from "@/base/text";
 
 export default function JoinUs() {
   return (

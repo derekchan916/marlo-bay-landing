@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Text } from "@/base/texts";
+import { Text } from "@/base/text";
 
 interface TestimonialCardProps {
   quote: string;
