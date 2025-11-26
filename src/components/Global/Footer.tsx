@@ -4,7 +4,7 @@ import { Text } from "@/base/text";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container-base py-12">
+      <div className="container-base py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Left Column - Logo and Location */}
           <div className="md:col-span-1">

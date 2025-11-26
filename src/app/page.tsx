@@ -37,12 +37,12 @@ export default function Home() {
               </div>
 
               {/* Title */}
-              <Text className="text-6xl text-white mb-6" variant="h1">
+              <Text className="text-white mb-6" variant="h1">
                 Journey to Market Leadership
               </Text>
 
               {/* Subtitle */}
-              <Text className="text-white/90 mb-8 max-w-2xl" variant="p">
+              <Text className="text-white/90 mb-8 max-w-2xl" variant="lead">
                 Our commitment to collaborative, proactive engagement has been
                 rewarded with lasting partnerships.
               </Text>
@@ -117,7 +117,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Image Grid */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <IndustryCard
                 imageSrc="/veterinary-services.jpg"
                 alt="Veterinary Services"

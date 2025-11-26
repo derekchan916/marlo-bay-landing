@@ -22,7 +22,7 @@ export default function FinancialForm({
   const profitOptions = ["< $500K", "$500K - $1M", "> $1M"];
 
   return (
-    <div className="bg-stone-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-stone-50 py-16 px-4 sm:px-6 lg:px-8 pt-32">
       <div className="max-w-lg mx-auto">
         <form
           className="space-y-8"
@@ -33,6 +33,9 @@ export default function FinancialForm({
         >
           {/* Website Input */}
           <div>
+            <Text className="mb-8" variant="h2">
+              Find Your Perfect Match
+            </Text>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Website
             </label>
@@ -50,7 +53,7 @@ export default function FinancialForm({
             <label className="block text-sm font-medium text-gray-700 mb-4">
               2024 Annual Revenue
             </label>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {revenueOptions.map((option) => (
                 <Button
                   key={option}
@@ -69,7 +72,7 @@ export default function FinancialForm({
             <label className="block text-sm font-medium text-gray-700 mb-4">
               2024 Annual Profit
             </label>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {profitOptions.map((option) => (
                 <Button
                   key={option}
@@ -89,7 +92,7 @@ export default function FinancialForm({
           </Button>
 
           <Text className="text-center text-gray-500 mt-4" variant="small">
-            Free Instant Buyer Match. No Email or Sign-Up Necessary.
+            Free Instant Buyer Match. No Sign-Up Necessary.
           </Text>
         </form>
       </div>

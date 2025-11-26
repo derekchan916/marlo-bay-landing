@@ -2,8 +2,8 @@ import { Text } from "@/base/text";
 
 export default function JoinUs() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-stone-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-stone-50">
+      <div className="container-base section-y-padding pt-0">
         <div className="bg-stone-100 rounded-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 md:p-12">
             {/* Left Column - Text and Buttons */}

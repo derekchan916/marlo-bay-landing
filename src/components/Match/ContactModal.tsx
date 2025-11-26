@@ -98,10 +98,10 @@ export default function ContactModal({
         ) : (
           <>
             <div className="text-center">
-              <Text className="font-light mb-4" variant="h2">
+              <Text className="mb-2" variant="h2">
                 Take the first step today.
               </Text>
-              <Text variant="p">
+              <Text variant="lead">
                 Turn buyer interest into competing offers and get acquired on
                 the best terms.
               </Text>
