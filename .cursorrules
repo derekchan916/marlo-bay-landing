@@ -5,3 +5,6 @@
 - Place all shared components in the `src/base` folder
 - This folder will serve as the location for all shared/reusable components
 
+### Code Style
+- Try to keep all properties (props, className attributes, etc.) in alphabetical order when possible
+
