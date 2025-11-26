@@ -27,7 +27,7 @@ export default function JoinUs() {
 
             {/* Right Column - Image */}
             <div className="relative">
-              <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden border-2 border-stone-200">
+              <div className="relative w-full aspect-4/5 rounded-lg overflow-hidden border-2 border-stone-200">
                 {/* Placeholder for image - will be replaced later */}
                 <div className="w-full h-full bg-stone-200 flex items-center justify-center">
                   <p className="text-gray-400">Image placeholder</p>

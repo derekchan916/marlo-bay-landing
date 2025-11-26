@@ -4,11 +4,23 @@ import { useState, useEffect } from "react";
 import FullLogoColored from "@/icons/Logo/FullLogoColored";
 import FullLogoWhite from "@/icons/Logo/FullLogoWhite";
 
-export default function Header() {
+interface HeaderProps {
+  logoVariant?: "color" | "white" | "auto";
+  handleScroll?: boolean;
+}
+
+export default function Header({
+  logoVariant = "auto",
+  handleScroll = true,
+}: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    if (!handleScroll) {
+      return;
+    }
+
+    const handleScrollEvent = () => {
       // Hero section is min-h-screen, so switch logo when scrolled past viewport height
       const scrollY = window.scrollY;
       const viewportHeight = window.innerHeight;
@@ -16,22 +28,27 @@ export default function Header() {
     };
 
     // Check initial scroll position
-    handleScroll();
+    handleScrollEvent();
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScrollEvent);
+    return () => window.removeEventListener("scroll", handleScrollEvent);
+  }, [handleScroll]);
+
+  // Determine which logo to show
+  const showColoredLogo =
+    logoVariant === "color" ||
+    (logoVariant === "auto" && handleScroll && isScrolled);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-sm" : "bg-transparent"
+        showColoredLogo ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 md:h-20">
           <div className="transition-opacity duration-300">
-            {isScrolled ? (
+            {showColoredLogo ? (
               <FullLogoColored width={280} />
             ) : (
               <FullLogoWhite width={280} />

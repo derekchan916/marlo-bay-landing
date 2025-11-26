@@ -47,19 +47,26 @@ export default function Home() {
               </p>
 
               {/* Input and Button */}
-              <div className="flex flex-col sm:flex-row gap-3 max-w-lg">
+              <form
+                action="/match"
+                method="get"
+                className="flex flex-col sm:flex-row gap-3 max-w-lg"
+              >
                 <Input
+                  name="domain"
                   type="text"
                   placeholder="Enter your website"
+                  required
                   className="h-12 bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60 focus-visible:ring-white/50"
                 />
                 <Button
+                  type="submit"
                   size="lg"
                   className="h-12 bg-white text-black hover:bg-white/90 px-8 whitespace-nowrap"
                 >
                   Find Buyers
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
