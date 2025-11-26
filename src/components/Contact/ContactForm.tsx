@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
-import { Text } from "@/base/text";
+import { Text } from "@/base/texts";
 import { supabase } from "@/lib/supabase";
 
 export default function ContactForm() {

@@ -1,6 +1,6 @@
 import Header from "@/components/Global/Header";
 import FinancialForm from "@/components/Match/FinancialForm";
-import { Text } from "@/base/text";
+import { Text } from "@/base/texts";
 import Footer from "@/components/Global/Footer";
 
 export default async function MatchPage({

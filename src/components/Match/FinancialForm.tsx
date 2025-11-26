@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
-import { Text } from "@/base/text";
+import { Text } from "@/base/texts";
 import ContactModal from "@/components/Match/ContactModal";
 
 interface FinancialFormProps {

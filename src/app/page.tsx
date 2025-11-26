@@ -5,12 +5,13 @@ import Header from "@/components/Global/Header";
 import Footer from "@/components/Global/Footer";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
-import { Text } from "@/base/text";
+import { Text } from "@/base/texts";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
       <Header />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         {/* Background Image */}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Text } from "@/base/text";
+import { Text } from "@/base/texts";
 
 interface TestimonialCardProps {
   quote: string;
@@ -39,4 +39,3 @@ export default function TestimonialCard({
     </div>
   );
 }
-
