@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Button } from "@/base/button";
 import { Text } from "@/base/text";
 
 export default function JoinUs() {
@@ -16,9 +18,9 @@ export default function JoinUs() {
                 Get in touch with our M&A experts to start your journey to a
                 faster, more valuable exit.
               </Text>
-              <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                Contact Us
-              </button>
+              <Button asChild size="lg">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
             </div>
 
             {/* Right Column - Image */}
