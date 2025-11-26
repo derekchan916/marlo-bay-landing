@@ -1,0 +1,7 @@
+## Component Guidelines
+
+### shadcn/ui Components
+- When using components from shadcn/ui, copy the component code directly into the project
+- Place all shared components in the `src/base` folder
+- This folder will serve as the location for all shared/reusable components
+
