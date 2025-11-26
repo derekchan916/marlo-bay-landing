@@ -47,7 +47,7 @@ export default function Header({
       }`}
     >
       <div className="container-base">
-        <div className="flex items-center h-16 md:h-18">
+        <div className="flex items-center justify-between h-16 md:h-18">
           <Link
             className="transition-opacity duration-300 cursor-pointer"
             href="/"
@@ -57,6 +57,16 @@ export default function Header({
             ) : (
               <FullLogoWhite width={280} />
             )}
+          </Link>
+          <Link
+            className={`transition-colors cursor-pointer ${
+              showColoredLogo
+                ? "text-gray-900 hover:text-gray-600"
+                : "text-white hover:text-white/80"
+            }`}
+            href="/contact"
+          >
+            Contact Us
           </Link>
         </div>
       </div>
