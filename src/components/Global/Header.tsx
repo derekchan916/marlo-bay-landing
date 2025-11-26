@@ -45,7 +45,7 @@ export default function Header({
         showColoredLogo ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-base">
         <div className="flex items-center h-16 md:h-20">
           <div className="transition-opacity duration-300">
             {showColoredLogo ? (

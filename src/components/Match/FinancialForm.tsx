@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
+import { Text } from "@/base/text";
 import ContactModal from "@/components/Match/ContactModal";
 
 interface FinancialFormProps {
@@ -87,9 +88,9 @@ export default function FinancialForm({
             Find Potential Buyers
           </Button>
 
-          <p className="text-center text-sm text-gray-500 mt-4">
+          <Text className="text-center text-gray-500 mt-4" variant="small">
             Free Instant Buyer Match. No Email or Sign-Up Necessary.
-          </p>
+          </Text>
         </form>
       </div>
 

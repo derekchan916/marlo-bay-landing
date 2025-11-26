@@ -4,6 +4,8 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
+import { Text } from "@/base/text";
+import { supabase } from "@/lib/supabase";
 
 interface ContactModalProps {
   domain?: string;
@@ -23,33 +25,55 @@ export default function ContactModal({
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [fullName, setFullName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [mobileNumber, setMobileNumber] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setIsSubmitting(true);
 
     // Validation: full name is required
     if (!fullName.trim()) {
       setError("Full name is required.");
+      setIsSubmitting(false);
       return;
     }
 
     // Validation: either email or mobile number is required
     if (!email.trim() && !mobileNumber.trim()) {
       setError("Please provide either an email address or mobile number.");
+      setIsSubmitting(false);
       return;
     }
 
-    // API call will be handled later
-    console.log({
-      domain,
-      email,
-      fullName,
-      mobileNumber,
-      profit,
-      revenue,
-    });
+    try {
+      const { error: insertError } = await supabase
+        .from("contact_requests")
+        .insert({
+          annual_profit: profit || null,
+          annual_revenue: revenue || null,
+          domain: domain || null,
+          email: email.trim() || null,
+          full_name: fullName.trim(),
+          phone: mobileNumber.trim() || null,
+        });
+
+      if (insertError) {
+        throw insertError;
+      }
+
+      // Success - show success message
+      setIsSuccess(true);
+    } catch (err) {
+      setError(
+        "Something went wrong. Please try again or contact us directly."
+      );
+      console.error("Error submitting form:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,67 +86,84 @@ export default function ContactModal({
       overlayClassName="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
     >
       <div className="space-y-6">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
-            Take the first step today.
-          </h2>
-          <p className="text-lg text-gray-600">
-            Turn buyer interest into competing offers and get acquired on the
-            best terms.
-          </p>
-        </div>
-
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Full Name
-            </label>
-            <Input
-              className="w-full"
-              onChange={(e) => setFullName(e.target.value)}
-              placeholder="Enter your full name"
-              required
-              type="text"
-              value={fullName}
-            />
+        {isSuccess ? (
+          <div className="text-center space-y-4">
+            <Text className="font-light" variant="h2">
+              Thank you
+            </Text>
+            <Text variant="p">
+              We&rsquo;ve received your information and will be in touch soon.
+            </Text>
           </div>
+        ) : (
+          <>
+            <div className="text-center">
+              <Text className="font-light mb-4" variant="h2">
+                Take the first step today.
+              </Text>
+              <Text variant="p">
+                Turn buyer interest into competing offers and get acquired on
+                the best terms.
+              </Text>
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address
-            </label>
-            <Input
-              className="w-full"
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              type="email"
-              value={email}
-            />
-          </div>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name
+                </label>
+                <Input
+                  className="w-full"
+                  onChange={(e) => setFullName(e.target.value)}
+                  placeholder="Enter your full name"
+                  required
+                  type="text"
+                  value={fullName}
+                />
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Mobile Number
-            </label>
-            <Input
-              className="w-full"
-              onChange={(e) => setMobileNumber(e.target.value)}
-              placeholder="Enter your mobile number"
-              type="tel"
-              value={mobileNumber}
-            />
-          </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address
+                </label>
+                <Input
+                  className="w-full"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  type="email"
+                  value={email}
+                />
+              </div>
 
-          {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Mobile Number
+                </label>
+                <Input
+                  className="w-full"
+                  onChange={(e) => setMobileNumber(e.target.value)}
+                  placeholder="Enter your mobile number"
+                  type="tel"
+                  value={mobileNumber}
+                />
+              </div>
 
-          <Button className="w-full" type="submit">
-            Get Started for Free
-          </Button>
+              {error && (
+                <Text className="text-red-600 text-center" variant="small">
+                  {error}
+                </Text>
+              )}
 
-          <p className="text-center text-sm text-gray-500">
-            No commitment, it&rsquo;s just a 15 minute chat.
-          </p>
-        </form>
+              <Button className="w-full" disabled={isSubmitting} type="submit">
+                {isSubmitting ? "Submitting..." : "Get Started for Free"}
+              </Button>
+
+              <Text className="text-center text-gray-500" variant="small">
+                No commitment, it&rsquo;s just a 15 minute chat.
+              </Text>
+            </form>
+          </>
+        )}
       </div>
     </Modal>
   );

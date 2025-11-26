@@ -5,6 +5,7 @@ import Header from "@/components/Global/Header";
 import Footer from "@/components/Global/Footer";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
+import { Text } from "@/base/text";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 container-base ">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               {/* Tag */}
@@ -36,15 +37,15 @@ export default function Home() {
               </div>
 
               {/* Title */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 tracking-tight leading-tight">
+              <Text className="text-6xl text-white mb-6" variant="h1">
                 Journey to Market Leadership
-              </h1>
+              </Text>
 
               {/* Subtitle */}
-              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
+              <Text className="text-white/90 mb-8 max-w-2xl" variant="p">
                 Our commitment to collaborative, proactive engagement has been
                 rewarded with lasting partnerships.
-              </p>
+              </Text>
 
               {/* Input and Button */}
               <form
@@ -73,40 +74,46 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
-            Our commitment to collaborative, proactive engagement has been
-            rewarded with lasting partnerships.
-          </p>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            Odyssey is a top private equity firm with a rigorous approach to
-            thematic investing in industrial and business services markets.
-            Through our Buy, Build and Integrate approach, we aim to transform
-            middle-market companies into highly efficient, diversified leaders
-            with attractive long-term growth profiles. Since 1997, we have
-            raised over $8.2 billion of private equity capital that has been
-            invested in over 50 platform companies that have completed
-            approximately 300 add-on acquisitions. We are currently investing
-            out of our sixth fund, with $3.25 billion in capital commitments.
-          </p>
+      <section className="bg-gray-50">
+        <div className="container-base section-y-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Image on the left */}
+            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden">
+              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                <span className="text-gray-400">Image placeholder</span>
+              </div>
+            </div>
+
+            {/* Text on the right, centered vertically */}
+            <div className="flex flex-col justify-center">
+              <Text className="mb-6" variant="h2">
+                Our mission
+              </Text>
+              <Text color="secondary" variant="lead">
+                A top private equity firm transforming middle-market companies
+                through our Buy, Build and Integrate approach. Since 1997, we
+                have raised over $8.2 billion invested in over 50 platform
+                companies.
+              </Text>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Transformative Growth Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <section className="bg-white">
+        <div className="container-base section-y-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Text */}
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <div className="flex flex-col justify-center">
+              <Text className="mb-6" variant="h2">
                 Transformative Growth
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              </Text>
+              <Text color="secondary" variant="lead">
                 We have a strong track record of taking several companies from a
                 few million in revenue to hundreds of millions in revenue across
                 industry verticals.
-              </p>
+              </Text>
             </div>
 
             {/* Right Column - Image Grid */}
@@ -147,13 +154,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-gray-50">
+        <div className="container-base section-y-padding">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-              What Our Partners
-            </h2>
-            <p className="text-2xl md:text-3xl text-gray-600">Have to Say</p>
+            <Text className="mb-2" variant="h2">
+              What Our Partners Have to Say
+            </Text>
           </div>
 
           {/* Testimonials Grid */}

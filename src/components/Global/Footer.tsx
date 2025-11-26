@@ -1,30 +1,35 @@
 import FullLogoWhite from "@/icons/Logo/FullLogoWhite";
+import { Text } from "@/base/text";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container-base py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Left Column - Logo and Location */}
           <div className="md:col-span-1">
             <div className="mb-4">
               <FullLogoWhite width={200} />
             </div>
-            <p className="text-white text-sm">New York, NY</p>
+            <Text className="text-white" variant="small">
+              New York, NY
+            </Text>
           </div>
 
           {/* Resources Column */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <Text className="text-white mb-4" variant="h4">
+              Resources
+            </Text>
             <ul className="space-y-2">
-              <li>
+              {/* <li>
                 <a
                   href="/about"
                   className="text-gray-300 hover:text-white text-sm transition-colors"
                 >
                   About
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="/contact"
@@ -38,7 +43,9 @@ export default function Footer() {
 
           {/* Social Column */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Social</h3>
+            <Text className="text-white mb-4" variant="h4">
+              Social
+            </Text>
             <ul className="space-y-2">
               <li>
                 <a
@@ -59,10 +66,10 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-xs">
+          <Text className="text-gray-400" variant="small">
             Copyright &copy; {new Date().getFullYear()} Marlo Bay. All Rights
             Reserved
-          </p>
+          </Text>
           <div className="flex gap-6">
             <a
               href="/terms"
@@ -82,4 +89,3 @@ export default function Footer() {
     </footer>
   );
 }
-

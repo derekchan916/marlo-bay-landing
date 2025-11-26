@@ -119,3 +119,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Container utilities - max-width with horizontal padding */
+  .container-base {
+    @apply max-w-[1368px] mx-auto px-6 sm:px-8 lg:px-12 w-full;
+  }
+  .section-y-padding {
+    @apply py-16 md:py-24;
+  }
+}
