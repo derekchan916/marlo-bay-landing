@@ -1,8 +1,10 @@
-import IndustryCard from "@/components/Home/IndustryCard";
-import TestimonialCard from "@/components/Home/TestimonialCard";
-import JoinUs from "@/components/Home/JoinUs";
-import Header from "@/components/Global/Header";
+import Image from "next/image";
 import Footer from "@/components/Global/Footer";
+import Header from "@/components/Global/Header";
+import IndustryCard from "@/components/Home/IndustryCard";
+import JoinUs from "@/components/Home/JoinUs";
+import ProgressiveHeroImage from "@/components/Home/ProgressiveHeroImage";
+import TestimonialCard from "@/components/Home/TestimonialCard";
 import { Button } from "@/base/button";
 import { Input } from "@/base/input";
 import { Text } from "@/base/text";
@@ -14,17 +16,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/hero-background.jpg')",
-            backgroundColor: "#1a1a1a", // Fallback dark color
-          }}
-        >
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+        {/* Background Image - Progressive Loading */}
+        <ProgressiveHeroImage />
 
         {/* Hero Content */}
         <div className="relative z-10 container-base ">
@@ -76,13 +69,20 @@ export default function Home() {
 
       {/* About Section */}
       <section className="bg-gray-50">
-        <div className="container-base section-y-padding">
+        <div className="container-base section-y-padding-sm">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image on the left */}
-            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden">
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-400">Image placeholder</span>
-              </div>
+            <div className="relative hidden w-full max-w-md mx-auto aspect-4/3 rounded-lg overflow-hidden lg:block">
+              <Image
+                alt="About Marlo Bay Partners"
+                className="object-cover"
+                fill
+                priority
+                quality={90}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                src="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/about.png"
+                unoptimized
+              />
             </div>
 
             {/* Text on the right, centered vertically */}

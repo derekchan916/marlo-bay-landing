@@ -128,4 +128,7 @@
   .section-y-padding {
     @apply py-16 md:py-24;
   }
+  .section-y-padding-sm {
+    @apply py-12 md:py-20;
+  }
 }
