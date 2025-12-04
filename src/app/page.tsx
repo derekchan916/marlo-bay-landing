@@ -26,19 +26,18 @@ export default function Home() {
               {/* Tag */}
               <div className="mb-6">
                 <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium">
-                  For businesses with $5M-100M in sales
+                  For businesses with $1M-100M in sales
                 </span>
               </div>
 
               {/* Title */}
               <Text className="text-white mb-6" variant="h1">
-                Journey to Market Leadership
+                The Investment Bank for Small Businesses
               </Text>
 
               {/* Subtitle */}
               <Text className="text-white/90 mb-8 max-w-2xl" variant="lead">
-                Our commitment to collaborative, proactive engagement has been
-                rewarded with lasting partnerships.
+                A simple and transparent way to sell your business
               </Text>
 
               {/* Input and Button */}
@@ -72,16 +71,15 @@ export default function Home() {
         <div className="container-base section-y-padding-sm">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image on the left */}
-            <div className="relative hidden w-full max-w-md mx-auto aspect-4/3 rounded-lg overflow-hidden lg:block">
+            <div className="relative hidden w-full max-w-md mx-auto aspect-4/3 rounded-lg overflow-hidden bg-gray-100 lg:block">
               <Image
                 alt="About Marlo Bay Partners"
                 className="object-cover"
                 fill
                 priority
-                quality={90}
+                quality={75}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 src="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/about.png"
-                unoptimized
               />
             </div>
 
@@ -91,10 +89,9 @@ export default function Home() {
                 Our mission
               </Text>
               <Text color="secondary" variant="lead">
-                A top private equity firm transforming middle-market companies
-                through our Buy, Build and Integrate approach. Since 1997, we
-                have raised over $8.2 billion invested in over 50 platform
-                companies.
+                We provide top-level investment banking services to all small
+                business owners, ensuring they get the full value for their
+                life&apos;s work.
               </Text>
             </div>
           </div>
@@ -104,50 +101,38 @@ export default function Home() {
       {/* Transformative Growth Section */}
       <section className="bg-white">
         <div className="container-base section-y-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             {/* Left Column - Text */}
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center lg:col-span-2">
               <Text className="mb-6" variant="h2">
-                Transformative Growth
+                Your Professional Advisor
               </Text>
               <Text color="secondary" variant="lead">
-                We have a strong track record of taking several companies from a
-                few million in revenue to hundreds of millions in revenue across
-                industry verticals.
+                We connect your business to a wide network of buyers. Our expert
+                advisors guide you through every step of the sale, providing
+                dedicated support from start to finish.
               </Text>
             </div>
 
             {/* Right Column - Image Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:col-span-3 gap-4">
               <IndustryCard
-                imageSrc="/veterinary-services.jpg"
                 alt="Veterinary Services"
+                className="aspect-3/2 md:aspect-square lg:aspect-2/3"
+                imageSrc="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/vetinary-services.png"
                 label="Veterinary Services"
               />
               <IndustryCard
-                imageSrc="/commercial-services.jpg"
-                alt="Commercial Services"
-                label="Commercial Services"
-              />
-              <IndustryCard
-                imageSrc="/home-services.jpg"
                 alt="Home Services"
+                className="aspect-3/2 md:aspect-square lg:aspect-2/3"
+                imageSrc="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/home-services.png"
                 label="Home Services"
               />
               <IndustryCard
-                imageSrc="/accounting-services.jpg"
-                alt="Accounting Services"
-                label="Accounting Services"
-              />
-              <IndustryCard
-                imageSrc="/it-services.jpg"
-                alt="IT Services"
-                label="IT Services"
-              />
-              <IndustryCard
-                imageSrc="/youth-enrichment.jpg"
-                alt="Youth Enrichment"
-                label="Youth Enrichment"
+                alt="Swim Schools"
+                className="aspect-3/2 md:aspect-square lg:aspect-2/3"
+                imageSrc="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/swim-schools.png"
+                label="Swim Schools"
               />
             </div>
           </div>
@@ -166,19 +151,22 @@ export default function Home() {
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <TestimonialCard
-              quote="&ldquo;It has been a pleasure partnering with Odyssey over the last several years. As a first-time private equity CEO, I deeply valued their strategic support throughout our journey.&rdquo;"
-              name="Scott Dulitz"
-              title="CEO, Mercalis"
+              imageSrc="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/maria-flores.png"
+              name="Maria Flores"
+              quote="&ldquo;As a first-time seller, partnering with Marlo Bay Partners made the entire process simple and smooth. Their guidance was invaluable, and they saved me a tremendous amount of time and stress.&rdquo;"
+              title="CEO, Blue Whales Swim School"
             />
             <TestimonialCard
-              quote="&ldquo;We are grateful for our successful partnership with Odyssey that transformed NSI into a leading platform in the electrical and HVAC markets.&rdquo;"
-              name="G.R. Schrotenboer"
-              title="CEO, NSI"
+              imageSrc="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/david-chen.png"
+              name="David Chen"
+              quote="&ldquo;Our successful partnership with Marlo Bay Partners was key to preparing and selling our business. They made a complex process straightforward and efficient, allowing us to achieve a great outcome.&rdquo;"
+              title="CEO, Whisker Haven Pet Care"
             />
             <TestimonialCard
-              quote="&ldquo;When I joined the Company shortly after Odyssey&rsquo;s investment, we were immediately aligned on the vision of what we could create together as partners.&rdquo;"
-              name="Mike Kachmer"
-              title="CEO, Duravant"
+              imageSrc="https://rhlhswfxiviuowlkjkij.supabase.co/storage/v1/object/public/assets/james-wilson.png"
+              name="James Wilson"
+              quote="&ldquo;From the very start, Marlo Bay Partners had a clear and simple plan for the sale. We were aligned as partners immediately, which saved us months and made the entire journey seamless.&rdquo;"
+              title="CEO, Coastal Tide Swim Club"
             />
           </div>
         </div>

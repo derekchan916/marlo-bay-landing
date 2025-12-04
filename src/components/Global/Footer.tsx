@@ -49,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/marlo-bay-partners"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white text-sm transition-colors"
@@ -71,18 +71,18 @@ export default function Footer() {
             Reserved
           </Text>
           <div className="flex gap-6">
-            <a
-              href="/terms"
+            <span
+              // href="/terms"
               className="text-gray-400 hover:text-white text-xs transition-colors"
             >
               Terms of Service
-            </a>
-            <a
-              href="/privacy"
+            </span>
+            <span
+              // href="/privacy"
               className="text-gray-400 hover:text-white text-xs transition-colors"
             >
               Privacy Policy
-            </a>
+            </span>
           </div>
         </div>
       </div>
