@@ -171,7 +171,7 @@ export default function ContactForm() {
 
           {/* Right Column - Content */}
           <div className="flex flex-col">
-            <div>
+            {/* <div>
               <Text color="secondary" className="mb-2" variant="p">
                 Email us at:
               </Text>
@@ -181,7 +181,7 @@ export default function ContactForm() {
               >
                 jimmy@marlobaypartners.com
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
